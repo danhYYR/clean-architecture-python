@@ -1,4 +1,4 @@
-node('master') {
+node('Built-In Node') {
 
     AZURE_RESOURCE_GROUP  = 'demomlops'
     AZURE_AKS_CLUSTER  = 'aks-demo'
