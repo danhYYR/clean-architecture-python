@@ -14,7 +14,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 // Checkout code from GitHub
-                git 'https://github.com/danhYYR/clean-architecture-python'
+                git 'https://github.com/danhYYR/clean-architecture-python.git'
             }
         }
         
