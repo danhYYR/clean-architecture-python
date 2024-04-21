@@ -6,7 +6,7 @@ pipeline {
 
         DOCKER_IMAGE_NAME  = 'tsdb'
         BUILD_NUMBER = '0.2'
-        env.IMAGE_TAG = "${ACR_SERVER}/${DOCKER_IMAGE_NAME}"
+ 
     }
 
 
