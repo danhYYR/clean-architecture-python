@@ -11,8 +11,7 @@ pipeline {
 
 
     stages {
-        stage('Checkout Code') {
-        
+
         stage('Build Docker Image') {
             steps {
                 // Build Docker image from Dockerfile
