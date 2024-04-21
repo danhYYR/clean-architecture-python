@@ -12,11 +12,6 @@ pipeline {
 
     stages {
         stage('Checkout Code') {
-            steps {
-                // Checkout code from GitHub
-                git 'https://github.com/danhYYR/clean-architecture-python.git'
-            }
-        }
         
         stage('Build Docker Image') {
             steps {
