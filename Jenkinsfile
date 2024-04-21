@@ -1,5 +1,5 @@
-node('Built-In Node') {
-
+pipeline {
+    agent any
     AZURE_RESOURCE_GROUP  = 'demomlops'
     AZURE_AKS_CLUSTER  = 'aks-demo'
 
