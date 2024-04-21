@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tsdb-createloop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tsdb-dumpapp
+  template:
+    metadata:
+      labels:
+        app: tsdb-dumpapp
+    spec:
+      containers:
+      - name: tsdb-container
+        image: demoacr2024.azurecr.io/tsdb:lastest
+        ports:
+        - containerPort: 8080
