@@ -1,11 +1,13 @@
 pipeline {
     agent any
-    AZURE_RESOURCE_GROUP  = 'demomlops'
-    AZURE_AKS_CLUSTER  = 'aks-demo'
+    environment {
+        AZURE_RESOURCE_GROUP  = 'demomlops'
+        AZURE_AKS_CLUSTER  = 'aks-demo'
 
-    DOCKER_IMAGE_NAME  = 'tsdb'
-    BUILD_NUMBER = '0.2'
-    env.IMAGE_TAG = "${ACR_SERVER}/${DOCKER_IMAGE_NAME}"
+        DOCKER_IMAGE_NAME  = 'tsdb'
+        BUILD_NUMBER = '0.2'
+        env.IMAGE_TAG = "${ACR_SERVER}/${DOCKER_IMAGE_NAME}"
+    }
 
 
     stages {
