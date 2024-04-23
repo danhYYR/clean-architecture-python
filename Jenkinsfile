@@ -1,5 +1,10 @@
 pipeline {
-    node(JBA) {
+    agent {
+        kubernetes {
+            // Reference the label of your manually created container template
+            label 'JBA'
+        }
+    }
     environment {
         AZURE_RESOURCE_GROUP  = 'demomlops'
         AZURE_AKS_CLUSTER  = 'aks-demo'
@@ -51,5 +56,5 @@ pipeline {
             }
         }
     }
-    }
+
 }
