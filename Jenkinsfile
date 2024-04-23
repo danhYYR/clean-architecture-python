@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    node(JBA) {
     environment {
         AZURE_RESOURCE_GROUP  = 'demomlops'
         AZURE_AKS_CLUSTER  = 'aks-demo'
@@ -15,7 +15,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 // Build Docker image from Dockerfile
-                sh 'docker build . -t webapp -f docker-files/webapp-Dockerfile ${DOCKER_IMAGE_NAME}:${BUILD_NUMBER} .'
+                sh 'docker build . -t webapp -f docker-files/webapp-Dockerfile ${DOCKER_IMAGE_NAME}:${BUILD_NUMBER}'
                 
                 // Tag Docker image with 'latest'
                 sh 'docker tag ${DOCKER_IMAGE_NAME}:${BUILD_NUMBER} ${DOCKER_IMAGE_NAME}:latest'
@@ -51,5 +51,5 @@ pipeline {
             }
         }
     }
-
+    }
 }
